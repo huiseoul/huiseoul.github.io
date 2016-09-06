@@ -75,8 +75,12 @@
     ga('create', 'UA-59953775-7', 'auto');
     ga('send', 'pageview');
     </script>
+    <script src="build/react.min.js"></script>
+    <script src="build/react-dom.min.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
   </head>
   <body>
+    <div id="huiseoul"></div>
     <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
       <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
         <div class="mdl-layout__header-row">
@@ -211,8 +215,21 @@
         </footer>
       </main>
     </div>
-  <script type="text/javascript">
-    "use strict";function huiseoul(){setTimeout(function(){console.log("여기까지 봐주셔서 감사합니다.")},600),setTimeout(function(){console.log("문의사항이 있으시면 언제든 engineer@huiseoul.com 이나 https://gitter.im/huiseoul-engineering/Lobby 로 연락주세요.")},1200),setTimeout(function(){console.log("뛰어난 당신과 함께 하고 싶습니다.")},1800)}var logo="  _____                     _         _           _                      _ \n | ____|_  _____  ___ _   _| |_ ___  | |__  _   _(_)___  ___  ___  _   _| |\n |  _| \\ \\/ / _ \\/ __| | | | __/ _ \\ | '_ \\| | | | / __|/ _ \\/ _ \\| | | | |\n | |___ >  <  __/ (__| |_| | ||  __/ | | | | |_| | \\__ \\  __/ (_) | |_| | |\n |_____/_/\\_\\___|\\___|\\__,_|\\__\\___| |_| |_|\\__,_|_|___/\\___|\\___/ \\__,_|_|\n                                                                           ";console.log(logo);
+  <script type="text/babel">
+    var ApplyForm = React.creatClass({
+      render: function() {
+        return (
+          React.createElement('div', {className: "commentBox"},
+            "Hello, world! I am a CommentBox."
+          )
+        );
+      }
+    });
+
+    ReactDOM.render(
+      React.createElement(ApplyForm, null),
+      document.getElementById('huiseoul')
+    );
   </script>
   </body>
 </html>
